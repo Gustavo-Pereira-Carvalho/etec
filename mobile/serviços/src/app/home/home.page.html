@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Serviços
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <ion-radio-group [(ngModel)]="servicos1" [allowEmptySelection]="false" required>
+    <label>Um serviço por vez:</label> <br>
+    <ion-radio value="lmpz">Serviço de limpeza doméstica: R$50,00 por hora</ion-radio><br />
+    <ion-radio value="pets">Serviço de cuidados com pets: R$150,00 por dia</ion-radio><br />
+    <ion-radio value="otrs">Serviço de eletricista, encanador ou chaveiro: R$250,00 por chamado;
+    </ion-radio>
+  </ion-radio-group><br><br><br>
+
+  <ion-radio-group [(ngModel)]="servicos2" [allowEmptySelection]="true" >
+    <label>dois serviço por vez:</label> <br>
+    <ion-radio value="1">limpeza e pets</ion-radio><br />
+    <ion-radio value="2">limpeza e outros</ion-radio><br />
+    <ion-radio value="3">pets e outros</ion-radio>
+  </ion-radio-group><br><br><br>
+
+  <ion-radio-group [(ngModel)]="servicos3" [allowEmptySelection]="true" >
+    <label>Os tres serviços:</label> <br>
+    <ion-radio value="otrs">Todos serviços
+    </ion-radio>
+  </ion-radio-group><br>
+
+
+    <ion-item>
+      <ion-input label="quantidade de horas, dias ou chamados de serviço" labelPlacement="floating" placeholder="" type="number"
+        [(ngModel)]="quantidade"></ion-input>
+    </ion-item>
+  <br>
+
+
+
+
+<ion-button id="present-alert" (click)="calcular()" size="small">Calcular</ion-button>
+
+
+
+
+
+<ion-alert trigger="present-alert"
+header="Valor imposto de renda"
+subHeader=""
+message= " {{res2}} "
+[buttons]="alertButtons">
+</ion-alert>
+
+
+</ion-content>
