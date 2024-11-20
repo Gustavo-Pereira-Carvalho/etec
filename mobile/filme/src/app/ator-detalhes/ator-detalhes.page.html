@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ator.nome}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-card *ngIf="ator">
+    <ion-card-header>
+      <img *ngIf="ator.cartaz" src="{{ator.cartaz}} " /> 
+      <ion-icon *ngIf="!ator.cartaz" name="videocam-off"></ion-icon>
+    </ion-card-header>
+
+    <ion-card-content>
+      <h1>{{ator.nome}}</h1><br>
+      <h2>nascimento:</h2>
+      <p>{{ator.nascimento}} </p><br>
+      <h2>genero:</h2>
+      <p>{{ator.genero}}</p><br>
+      <h2>sinopse</h2>
+      <p>{{ator.informacao}}</p>
+    </ion-card-content>
+    <ion-item>
+      <ion-badge color="medium" *ngFor="let genero of ator.generos">{{genero}}</ion-badge>
+    </ion-item>
+  </ion-card>
+  <label ></label>
+</ion-content>
+
