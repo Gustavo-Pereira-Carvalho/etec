@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>confirmar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<h2>quarto selecionado:</h2>
+<label>{{quartos}}</label>
+<h2>valor da diaria:</h2>
+<label>{{vldiaria}}</label>
+<h2>total a pagar:</h2>
+<label>R$:{{total}}</label>
+<br><br>
+<ion-button size="small" (click)="confirmar()">CONFIRMAR</ion-button>
+<ion-button size="small" [routerLink]="['/']">CORRIGIR</ion-button>
+</ion-content>

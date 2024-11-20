@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Einstein Palace Hotel & Resort
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h2>quartos disponiveis</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3"><strong>Tipo de quarto</strong></ion-col>
+      <ion-col size="3"><strong>Valor por diaria</strong></ion-col>
+      <ion-col size="3">Standard</ion-col>
+      <ion-col size="3">R$806,00</ion-col>
+      <ion-col size="3">Superior</ion-col>
+      <ion-col size="3">R$1050,00</ion-col>
+      <ion-col size="3">Master</ion-col>
+      <ion-col size="3">R$1500,00</ion-col>
+      <ion-col size="3">Luxo</ion-col>
+      <ion-col size="3">R$2100,00</ion-col>
+    </ion-row>
+  </ion-grid>
+  <h2>Selecione o que deseja:</h2>
+
+  <ion-radio-group [(ngModel)]="quartos">
+    <ion-radio value="standart" labelPlacement="end">Standart</ion-radio><br />
+    <ion-radio value="superior" labelPlacement="end">Superior</ion-radio><br />
+    <ion-radio value="master" labelPlacement="end">Master</ion-radio><br />
+    <ion-radio value="luxo" labelPlacement="end">Luxo</ion-radio><br />
+  </ion-radio-group>
+
+  <ion-item>
+    <ion-input  [(ngModel)]="quantidade" type="number" label="quantidade de dias:" placeholder="dias que ira se hospedar"></ion-input>
+  </ion-item>
+
+  <ion-button id="present-alert" (click)="confirmar()" size="small">Confirmar</ion-button>
+</ion-content>
