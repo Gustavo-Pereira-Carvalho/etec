@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Transporte de Cargas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h3>Tipo de transporte</h3>
+  <ion-radio-group [(ngModel)]="transporte">
+    <ion-radio value="leve" labelPlacement="end"><strong>Transporte leve:</strong> Utilizando mostos, com custo de R$1,50 por quilometro</ion-radio><br />
+    <ion-radio value="medio" labelPlacement="end"><strong>Transporte medio:</strong> Realizado com carros ou pickups, com custo de R$3,00 por quilometro</ion-radio><br />
+    <ion-radio value="pesado" labelPlacement="end"><strong>Transporte pesado:</strong> Feito com caminhões, com custo de R$6,00 por quilometro</ion-radio><br />
+  </ion-radio-group>
+
+  <ion-item>
+    <ion-input [(ngModel)]="quilometro" label="Quilometros:" labelPlacement="floating" placeholder="Quantidade de quilometro" required></ion-input>
+  </ion-item>
+
+  <h3>Adicionais Disponiveis:</h3>
+  <ion-checkbox [(ngModel)]="seguro" labelPlacement="end"><Strong>Seguro de carga:</Strong> Adicional de 10% sobre o valor do transporte</ion-checkbox><br>
+  <ion-checkbox [(ngModel)]="ajudante" labelPlacement="end"><strong>Ajudante:</strong> R$80,00 por hora trabalhada</ion-checkbox><br>
+  <ion-checkbox [(ngModel)]="embalagem" labelPlacement="end"><strong>Serviço de embalagem:</strong> Adicional de R$50,00 para embalagens especiais</ion-checkbox><br>
+  <ion-checkbox [(ngModel)]="agendamento" labelPlacement="end"><strong>Entrega com horario agendado:</strong> Adicional de R$30,00 para agendamentos fora do horario comercial</ion-checkbox>
+  <ion-item><br>
+    <ion-input [(ngModel)]="hrT" label="horas(ajudante):" labelPlacement="floating" placeholder="Horas trabalhadas"></ion-input>
+  </ion-item>
+  <h3>Formas de pagamento:</h3>
+  <ion-radio-group [(ngModel)]="pagamento">
+    <ion-radio value="credito" labelPlacement="end"><Strong>Cartao de Crédito</Strong></ion-radio><br />
+    <ion-radio value="pix" labelPlacement="end"><strong>Pix:</strong>Oferece um desconto de 10% sobre o valor do transporte (desconto nao aplicavel aos adicionais)</ion-radio><br />
+  </ion-radio-group>
+
+  <h3>Descontos Especiais:</h3>
+  <ion-radio-group [(ngModel)]="especial">
+    <ion-radio value="primeiraviagem" labelPlacement="end"><Strong>Cupom PRIMEIRAVIAGEM:</Strong>Concede um desconto de 5% sobre o valor do transporte(não aplicavel aos adicionais)</ion-radio><br />
+  </ion-radio-group>
+  <label>{{res2}}</label><br><br>
+
+  <ion-button id="present-alert" (click)="calcular()" size="small">Calcular</ion-button>
+
+
+  <ion-alert trigger="present-alert"
+header="Valor final:"
+subHeader=""
+message= " {{res}} "
+[buttons]="alertButtons">
+</ion-alert>
+</ion-content>
