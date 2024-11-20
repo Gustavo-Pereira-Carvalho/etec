@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Imposto
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<p>• Até R$ 2.112,00 - Isento <br>
+• De R$ 2.112,01 a R$ 2.828,00 - 7,5% <br>
+• De R$ 2.828,01 a R$ 3.744,00 - 15% <br>
+• De R$ 3.744,01 a R$ 4.660,00 - 22,5% <br>
+• Acima de R$ 4.660,00 - 27,5%</p>
+  <ion-item>
+    <ion-input label="quantidade de dinheiro a declarar" labelPlacement="floating" placeholder="valor..." type="number"
+      [(ngModel)]="quantia"></ion-input>
+  </ion-item><br>
+
+  <ion-radio-group [(ngModel)]="dependentes" [allowEmptySelection]="false" required>
+    <label>Possui dependentes:</label> <br>
+    <ion-radio value="simd">sim</ion-radio><br />
+    <ion-radio value="naod">nao</ion-radio>
+  </ion-radio-group><br>
+    <ion-item>
+      <ion-input label="quantidade de denpendentes" labelPlacement="floating" placeholder="quantidade..." type="number"
+        [(ngModel)]="qntdp"></ion-input>
+    </ion-item>
+  <br>
+    <ion-radio-group [(ngModel)]="despesas" [allowEmptySelection]="false" required>
+      <label>Possui despesas medicas:</label> <br>
+      <ion-radio value="sim">sim</ion-radio><br />
+      <ion-radio value="nao">nao</ion-radio>
+    </ion-radio-group><br>
+    <ion-item>
+      <ion-input label="valor total da despesa" labelPlacement="floating" placeholder="valor" type="number"
+        [(ngModel)]="qntdpm"></ion-input>
+    </ion-item>
+
+
+
+<ion-button id="present-alert" (click)="calcular()" size="small">Calcular</ion-button>
+
+<ion-alert trigger="present-alert" 
+header="Valor imposto de renda" 
+subHeader=""
+message= " {{res2}} "
+[buttons]="alertButtons">
+</ion-alert>
+
+  
+</ion-content>
+
+
+
